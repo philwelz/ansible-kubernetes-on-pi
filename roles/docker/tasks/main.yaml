@@ -1,0 +1,25 @@
+---
+- name: Add an apt signing key for Docker
+  apt_key:
+    url: "{{ docker_apt_key }}"
+    state: present
+
+- name: Add apt repository for stable version 
+  apt_repository:
+    repo: "{{ docker_repo }}"
+    state: present
+
+- name: Install docker and its dependecies
+  apt:
+    name: "{{ docker_packages }}"
+    state: present
+    update_cache: yes
+#  notify:
+#    - docker status
+
+- name: Ensure Docker is started and enabled at boot.
+  service:
+    name: docker
+    state: "{{ docker_service_state }}"
+    enabled: "{{ docker_service_enabled }}"
+
