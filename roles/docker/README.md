@@ -1,6 +1,6 @@
 **Table of Contents** 
 
-- [pi-fancontrol](#pi-fancontrol)
+- [Docker](#docker)
   - [Requirements](#requirements)
   - [Role Variables](#role-variables)
   - [Example Playbook](#example-playbook)
