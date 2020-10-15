@@ -1,13 +1,13 @@
 **Table of Contents** 
 
-- [ansible-playbooks](#ansible-playbooks)
+- [Ansible-kubernetes-on-pi](#ansible-kubernetes-on-pi)
   - [Requirements](#requirements)
   - [Roles](#roles)
   - [Inventory](#inventory)
   - [Configuration](#configuration)
   - [License](#license)
 
-# ansible-playbooks
+# ansible-kubernetes-on-pi
 
 ## Requirements
 
