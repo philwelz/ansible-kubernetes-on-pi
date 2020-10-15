@@ -47,9 +47,9 @@ all:
           kbernetes_role: node
 ```
 
-## Configuration
+## Usage
 
-**Work in Progress** 
+`ansible-playbook kubernetes.yaml -i inventory.yaml -u USER -k`
 
 ## License
 
