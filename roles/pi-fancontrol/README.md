@@ -17,6 +17,13 @@ You probably want to run the role with `become: true`
 
 [defaults/main.yml](https://github.com/philwelz/ansible-playbooks/blob/master/roles/pi-fancontrol/defaults/main.yaml)
 
+```yaml
+---
+fancontrol_enabled: true
+fan_config_file: /etc/udev/rules.d/50-rpi-fan.rules
+fan_config_template: fancontrol.jinja2
+```
+
 ## Example Playbook
 
 ```yaml

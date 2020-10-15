@@ -17,6 +17,17 @@ You probably want to run the role with `become: true`
 
 [defaults/main.yml](https://github.com/philwelz/ansible-playbooks/blob/master/roles/pi-system/defaults/main.yaml)
 
+```yaml
+---
+system_packages:
+  - apt-transport-https
+  - ca-certificates
+  - curl
+  - gnupg-agent
+  - software-properties-common
+  - lm-sensors
+```
+
 ## Example Playbook
 
 ```yaml
