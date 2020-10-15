@@ -15,7 +15,7 @@ You probably want to run the role with `become: true`
 
 ## Role Variables
 
-[defaults/main.yml](https://github.com/philwelz/ansible-playbooks/blob/master/roles/docker/defaults/main.yml)
+[defaults/main.yml](https://github.com/philwelz/ansible-playbooks/blob/master/roles/docker/defaults/main.yaml)
 
 ## Example Playbook
 
