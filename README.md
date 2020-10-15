@@ -16,7 +16,7 @@
 
 ## Playbooks
 
-- [kubernetes](https://github.com/philwelz/ansible-playbooks/tree/master/k8s.yaml)
+- [kubernetes](https://github.com/philwelz/ansible-playbooks/tree/master/kubernetes.yaml)
 
 ## Roles:
 
