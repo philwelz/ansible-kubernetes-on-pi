@@ -4,9 +4,9 @@
   roles:
     - role: pi-system
       become: true
-      when: ansible_os_family == 'Debian' 
+      when: ansible_os_family == 'Debian' and hardware == 'pi'
     - role: pi-fancontrol
       become: true
-      when: ansible_os_family == 'Debian' 
+      when: ansible_os_family == 'Debian' and hardware == 'pi'
     - role: docker
       become: true
