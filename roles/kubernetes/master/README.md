@@ -1,6 +1,6 @@
 **Table of Contents** 
 
-- [kubernetes-common](#kubernetes-common)
+- [kubernetes-master](#kubernetes-master)
   - [Requirements](#requirements)
   - [Role Variables](#role-variables)
   - [Example Playbook](#example-playbook)

@@ -21,6 +21,7 @@
 ## Roles:
 
 - [docker](https://github.com/philwelz/ansible-playbooks/tree/master/roles/docker)
+- [kubernetes](https://github.com/philwelz/ansible-playbooks/tree/master/roles/kubernetes)
 - [pi-fancontrol](https://github.com/philwelz/ansible-playbooks/tree/master/roles/pi-fancontrol)
 - [pi-system](https://github.com/philwelz/ansible-playbooks/tree/master/roles/pi-system)
 

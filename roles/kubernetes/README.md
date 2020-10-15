@@ -1,6 +1,6 @@
 **Table of Contents** 
 
-- [pi-fancontrol](#pi-fancontrol)
+- [Kubernetes](#kubernetes)
   - [Requirements](#requirements)
   - [Example Playbook](#example-playbook)
   - [Configuration](#configuration)
