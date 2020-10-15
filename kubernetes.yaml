@@ -10,3 +10,12 @@
       when: ansible_os_family == 'Debian' and hardware == 'pi'
     - role: docker
       become: true
+    - role: kubernetes/common
+      become: true
+    - role: kubernetes/master
+      become: true
+      when:  kubernetes_role == 'master'
+    - role: kubernetes/node
+      become: true
+      when:  kubernetes_role == 'node'
+

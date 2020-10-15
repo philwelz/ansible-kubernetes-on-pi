@@ -1,0 +1,8 @@
+---
+# Variables for Kubernetes installation
+kubernetes_apt_key: "https://packages.cloud.google.com/apt/doc/apt-key.gpg"
+kubernetes_apt_repository: "deb https://apt.kubernetes.io/ kubernetes-xenial main"
+kubernetes_packages:
+  - kubelet=1.19.2-00
+  - kubectl=1.19.2-00
+  - kubeadm=1.19.2-00
