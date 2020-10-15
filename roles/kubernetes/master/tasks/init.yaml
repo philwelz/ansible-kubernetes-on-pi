@@ -1,14 +1,4 @@
 ---
-# - name: Initialize Kubernetes master with kubeadm init.
-#   command: >
-#     kubeadm init
-#     --pod-network-cidr={{ kubernetes_pod_network.cidr }}
-#     --apiserver-advertise-address={{ kubernetes_apiserver_advertise_address | default(ansible_default_ipv4.address, true) }}
-#     --kubernetes-version {{ kubernetes_version }}
-#     --ignore-preflight-errors={{ kubernetes_ignore_preflight_errors }}
-#     {{ kubernetes_kubeadm_init_extra_opts }}
-#   register: kubeadmin_init
-
 - name: Init Kubernetes cluster
   shell: |
     kubeadm init \
