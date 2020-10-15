@@ -14,12 +14,27 @@
     name: "{{ docker_packages }}"
     state: present
     update_cache: yes
-#  notify:
-#    - docker status
+
+- name: Hold docker version
+  when: ansible_os_family == "Debian"
+  dpkg_selections:
+    name: docker-ce
+    selection: hold
 
 - name: Ensure Docker is started and enabled at boot.
   service:
     name: docker
     state: "{{ docker_service_state }}"
     enabled: "{{ docker_service_enabled }}"
+
+- name: Docker Daemon config for Kubernetes
+  template:
+    src: "{{ docker_deamon_config_template }}"
+    dest: "{{ docker_deamon_config_file }}"
+  register: dockerdaemon
+  when: kubernetes_role == 'master' or kubernetes_role == 'node'
+
+- name: reload docker
+  command: "service docker restart"
+  when: dockerdaemon.changed
 

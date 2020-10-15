@@ -9,3 +9,5 @@ docker_packages:
 # Service options.
 docker_service_state: started
 docker_service_enabled: true
+docker_deamon_config_file: "/etc/docker/daemon.json"
+docker_deamon_config_template: "docker.daemon.jinja2"
