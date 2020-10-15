@@ -1,0 +1,14 @@
+galaxy_info:
+  role_name: pi-system
+  author: Philip Welz
+  description: Role for installing System components
+  company: na
+  license: "license (BSD, MIT, APACHE)"
+  min_ansible_version: 2.10
+  platforms:
+    - name: Debian
+      versions:
+        - buster
+    - name: Ubuntu
+      versions:
+        - focal

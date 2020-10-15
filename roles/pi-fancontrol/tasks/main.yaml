@@ -1,0 +1,15 @@
+---
+- name: Configuring Fans
+  template:
+    src: "{{ fan_config_template }}"
+    dest: "{{ fan_config_file }}"
+  register: fancontrol
+  when: fancontrol_enabled
+
+- name: reload udev
+  command: "udevadm control --reload-rules"
+  when: fancontrol.changed
+
+- name: trigger udev
+  command: "udevadm trigger"
+  when: fancontrol.changed

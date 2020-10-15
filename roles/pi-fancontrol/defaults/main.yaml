@@ -1,0 +1,5 @@
+---
+# Variables for Fan control
+fancontrol_enabled: true
+fan_config_file: /etc/udev/rules.d/50-rpi-fan.rules
+fan_config_template: fancontrol.jinja2

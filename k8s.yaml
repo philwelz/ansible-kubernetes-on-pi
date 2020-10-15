@@ -1,0 +1,12 @@
+---
+- name: Kubernetes
+  hosts: all
+  roles:
+    - role: pi-system
+      become: true
+      when: ansible_os_family == 'Debian' 
+    - role: pi-fancontrol
+      become: true
+      when: ansible_os_family == 'Debian' 
+    - role: docker
+      become: true
