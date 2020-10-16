@@ -3,5 +3,8 @@
   template:
     src: "{{ fan_config_template }}"
     dest: "{{ fan_config_file }}"
+    owner: root
+    group: root
+    mode: '0644'
   register: fancontrol
   when: fancontrol_enabled
