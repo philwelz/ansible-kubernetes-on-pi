@@ -4,7 +4,7 @@
     kubeadm init \
     --service-cidr {{ kubernetes_service_cidr }} \
     --kubernetes-version {{ kubernetes_version }} \
-    --pod-network-cidr {{ kubernetes_pod_network.cidr}} \
+    --pod-network-cidr {{ kubernetes_pod_network_cidr }} \
     --apiserver-advertise-address={{ kubernetes_apiserver_advertise_address | default(ansible_default_ipv4.address, true) }} \
     {{ kubernetes_kubeadm_init_extra_opts  }}
   register: kubeadmin_init
@@ -27,11 +27,3 @@
     dest: ~/.kube/config
     state: link
     mode: 0644
-
-- name: Configure Calico networking.
-  command: "{{ item }}"
-  with_items:
-    - kubectl apply -f {{ kubernetes_calico_manifest_file }}
-  register: calico_result
-  changed_when: "'created' in calico_result.stdout"
-  when: kubernetes_pod_network.cni == 'calico'

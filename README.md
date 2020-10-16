@@ -43,10 +43,10 @@
 - name: Kubernetes
   hosts: all
   roles:
-    - role: pi/system
+    - role: pi-system
       become: true
       when: hardware == 'pi'
-    - role: pi/fancontrol
+    - role: pi-fancontrol
       become: true
       when: hardware == 'pi'
     - role: docker
@@ -54,6 +54,9 @@
     - role: kubernetes/common
       become: true
     - role: kubernetes/master
+      become: true
+      when:  kubernetes_role == 'master'
+    - role: kubernetes/cni
       become: true
       when:  kubernetes_role == 'master'
     - role: kubernetes/node

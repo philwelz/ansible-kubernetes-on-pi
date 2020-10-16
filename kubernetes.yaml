@@ -15,6 +15,9 @@
     - role: kubernetes/master
       become: true
       when:  kubernetes_role == 'master'
+    - role: kubernetes/cni
+      become: true
+      when:  kubernetes_role == 'master'
     - role: kubernetes/node
       become: true
       when:  kubernetes_role == 'node'
