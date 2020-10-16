@@ -1,5 +1,5 @@
 galaxy_info:
-  role_name: pi-fancontrol
+  role_name: pi/packages
   author: Philip Welz
   description: Role for installing System components
   company: na

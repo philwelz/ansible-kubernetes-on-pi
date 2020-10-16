@@ -2,12 +2,12 @@
 - name: Kubernetes
   hosts: all
   roles:
-    - role: pi-system
+    - role: pi/packages
       become: true
-      when: ansible_os_family == 'Debian' and hardware == 'pi'
-    - role: pi-fancontrol
+      when: hardware == 'pi'
+    - role: pi/fancontrol
       become: true
-      when: ansible_os_family == 'Debian' and hardware == 'pi'
+      when: hardware == 'pi'
     - role: docker
       become: true
     - role: kubernetes/common
