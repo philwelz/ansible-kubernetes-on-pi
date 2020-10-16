@@ -9,13 +9,15 @@
 
 # kubernetes-master
 
+Sub-Role for init the Kubernetes Cluster.
+
 ## Requirements
 
 You probably want to run the role with `become: true`
 
 ## Role Variables
 
-[defaults/main.yml](https://github.com/philwelz/ansible-playbooks/blob/master/roles/kubernetes/master/defaults/main.yaml)
+[defaults/main.yml](https://github.com/philwelz/ansible-kubernetes-on-pi/blob/master/roles/kubernetes/master/defaults/main.yaml)
 
 ```yaml
 ---

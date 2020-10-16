@@ -9,6 +9,8 @@
 
 # docker
 
+Role for installing Docker-Engine.
+
 ## Requirements
 
 You probably want to run the role with `become: true`

@@ -8,6 +8,8 @@
 
 # Kubernetes
 
+Role for configuring Kubernetes.
+
 ## Requirements
 
 You probably want to run the role with `become: true`
@@ -24,6 +26,9 @@ You probably want to run the role with `become: true`
     - role: kubernetes/master
       become: true
       when:  kubernetes_role == 'master'
+    - role: kubernetes/cni
+      become: true
+      when:  kubernetes_role == 'master'
     - role: kubernetes/node
       become: true
       when:  kubernetes_role == 'node'
@@ -31,10 +36,14 @@ You probably want to run the role with `become: true`
 
 ## Configuration
 
-- [common](https://github.com/philwelz/ansible-playbooks/tree/master/roles/kubernetes/common)
-- [master](https://github.com/philwelz/ansible-playbooks/tree/master/roles/kubernetes/master)
-- [node](https://github.com/philwelz/ansible-playbooks/tree/master/roles/kubernetes/node)
-
+- Kubernetes Container Network Interface
+  - [cni](https://github.com/philwelz/ansible-playbooks/tree/master/roles/kubernetes/cni)
+- Common Kubernetes Package including kubeadm, kubelet & kubectl
+  - [common](https://github.com/philwelz/ansible-playbooks/tree/master/roles/kubernetes/common)
+- Init Cluster
+  - [master](https://github.com/philwelz/ansible-playbooks/tree/master/roles/kubernetes/master)
+- Join Nodes to the Cluster
+  - [node](https://github.com/philwelz/ansible-playbooks/tree/master/roles/kubernetes/node)
 
 ## License
 
