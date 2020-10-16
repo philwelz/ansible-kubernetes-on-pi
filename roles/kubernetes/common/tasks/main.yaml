@@ -2,6 +2,7 @@
 - name: Check if swap is enabled
   command : free -m | grep Swap | awk '{print $3}'
   register: swap_used
+  changed_when: False
 
 - name: Disable system swap if swap is used
   command: "swapoff -a"
