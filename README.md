@@ -1,3 +1,5 @@
+![Ansible Lint](https://github.com/philwelz/ansible-kubernetes-on-pi/workflows/Ansible%20Lint/badge.svg)
+
 **Table of Contents** 
 
 - [Ansible-kubernetes-on-pi](#ansible-kubernetes-on-pi)
