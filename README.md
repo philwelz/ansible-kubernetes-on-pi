@@ -2,6 +2,7 @@
 
 - [Ansible-kubernetes-on-pi](#ansible-kubernetes-on-pi)
   - [Requirements](#requirements)
+  - [Installed](#installed)
   - [Roles](#roles)
   - [Inventory](#inventory)
   - [Configuration](#configuration)
@@ -15,7 +16,7 @@
 - static IPs configured
 - `group_enable=cpuset cgroup_memory=1 cgroup_enable=memory` added to `/boot/firmware/cmdline.txt`
 
-## Installed Versions
+## Installed
 
 - Common Packages
   - apt-transport-https
@@ -43,10 +44,10 @@
 - name: Kubernetes
   hosts: all
   roles:
-    - role: pi-system
+    - role: pi/packages
       become: true
       when: hardware == 'pi'
-    - role: pi-fancontrol
+    - role: pi/packages
       become: true
       when: hardware == 'pi'
     - role: docker
