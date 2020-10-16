@@ -1,6 +1,11 @@
 ---
-- name: Disable system swap
-  shell: "swapoff -a"
+- name: Check if swap is enabled
+  command : free -m | grep Swap | awk '{print $3}'
+  register: swap_used
+
+- name: Disable system swap if swap is used
+  command: "swapoff -a"
+  when: (swap_used.stdout_lines[0] | int) > 0
 
 - name: Remove current swaps from fstab
   lineinfile:
