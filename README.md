@@ -14,6 +14,7 @@
 
 ## Requirements
 
+- Ubuntu 20.04 pre-installed 
 - SSH setup on the PIs
 - static IPs configured
 - `group_enable=cpuset cgroup_memory=1 cgroup_enable=memory` added to `/boot/firmware/cmdline.txt`
@@ -47,26 +48,16 @@ The following packages will be installed with this playbook.
 ---
 - name: Kubernetes
   hosts: all
+  become: true
   roles:
-    - role: pi/packages
-      become: true
-      when: hardware == 'pi'
-    - role: pi/packages
-      become: true
-      when: hardware == 'pi'
+    - { role: pi/packages, when: hardware == 'pi' }
+    - { role: pi/fancontrol, when: hardware == 'pi' }
     - role: docker
-      become: true
     - role: kubernetes/common
-      become: true
-    - role: kubernetes/master
-      become: true
-      when:  kubernetes_role == 'master'
-    - role: kubernetes/cni
-      become: true
-      when:  kubernetes_role == 'master'
-    - role: kubernetes/node
-      become: true
-      when:  kubernetes_role == 'node'
+    - { role: kubernetes/master, when: kubernetes_role == 'master' }
+    - { role: kubernetes/cni, when: kubernetes_role == 'master' }
+    - { role: kubernetes/node, when: kubernetes_role == 'node' }
+ 
 ```
 
 ## Roles:
