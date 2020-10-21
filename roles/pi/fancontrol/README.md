@@ -38,29 +38,17 @@ fan_config_template: fancontrol.jinja2
 
 ## Configuration
 
-* `/etc/udev/rules.d/50-rpi-fan.rules`
+* `/boot/firmware/usercfg.txt`
 
 ```bash
-SUBSYSTEM=="thermal"
-KERNEL=="thermal_zone0"
-
-# If the temp hits 81C, highest RPM
-ATTR{trip_point_0_temp}="82000"
-ATTR{trip_point_0_hyst}="3000"
-#
-# If the temp hits 80C, higher RPM
-ATTR{trip_point_1_temp}="81000"
-ATTR{trip_point_1_hyst}="2000"
-#
-# If the temp hits 70C, higher RPM
-ATTR{trip_point_2_temp}="71000"
-ATTR{trip_point_2_hyst}="3000"
-#
-# If the temp hits 60C, turn on the fan
-ATTR{trip_point_3_temp}="61000"
-ATTR{trip_point_3_hyst}="5000"
-#
-# Fan is off otherwise
+# Place "config.txt" changes (dtparam, dtoverlay, disable_overscan, etc.) in
+# this file. Please refer to the README file for a description of the various
+# configuration files on the boot partition.
+dtoverlay=rpi-poe
+dtparam=poe_fan_temp0=61000,poe_fan_temp0_hyst=2000
+dtparam=poe_fan_temp1=70000,poe_fan_temp1_hyst=5000
+dtparam=poe_fan_temp2=75000,poe_fan_temp2_hyst=3000
+dtparam=poe_fan_temp3=81000,poe_fan_temp3_hyst=5000
 ```
 ## License
 
