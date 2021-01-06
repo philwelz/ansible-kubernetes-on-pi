@@ -31,13 +31,13 @@ The following packages will be installed with this playbook.
   - software-properties-common
   - lm-sensors
 - Docker
-  - docker-ce 19.03.13-3
-  - docker-ce-cli 19.03.13-3
-  - containerd 1.3.7-1
+  - docker-ce 20.10.2~3
+  - docker-ce-cli 20.10.2~3
+  - containerd 1.4.3-1
 - Kubernetes
-  - kubelet 1.19.2
-  - kubeadm 1.19.2
-  - kubectl 1.19.2
+  - kubelet 1.19.6
+  - kubeadm 1.19.6
+  - kubectl 1.19.6
 - Calico 3.16.3
 
 ## Playbooks
@@ -67,6 +67,8 @@ The following packages will be installed with this playbook.
 - [pi](https://github.com/philwelz/ansible-playbooks/tree/master/roles/pi)
 
 ## Inventory
+
+* inventory.yaml examle
 
 ```yaml
 ---
