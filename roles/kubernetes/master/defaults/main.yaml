@@ -1,6 +1,6 @@
 ---
 # Variables for Kubernetes installation
-kubernetes_version: '1.19.2'
+kubernetes_version: '1.19.6'
 kubernetes_service_cidr: "10.96.0.0/12"
 kubernetes_pod_network_cidr: "10.10.0.0/16"
 kubernetes_kubeadm_config: "/etc/kubernetes/admin.conf"
