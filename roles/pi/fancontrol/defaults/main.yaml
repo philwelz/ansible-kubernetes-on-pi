@@ -1,5 +1,0 @@
----
-# Variables for Fan control
-fancontrol_enabled: true
-fan_config_file: /boot/firmware/usercfg.txt
-fan_config_template: fancontrol.jinja2
